@@ -60,7 +60,7 @@ names(tidydata)<-gsub("gravity", "Gravity", names(tidydata))
 
 newdata <- tidydata %>%
         group_by(subject, activity) %>%
-        summarise_all(mean)
+        summarise_all(list(mean))
 
 # save the new dataset to txt file
 write.table(newdata, "newdata.txt", row.name=FALSE)
